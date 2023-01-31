@@ -144,7 +144,6 @@ header {
     font-size: 1.5rem;
     font-weight: 800;
     gap: 0.375rem;
-    /* min-width: 7.5rem; */
 }
 
 .logo img {
@@ -242,10 +241,12 @@ svg > text {
     mask-image: url(/assets/mask-reveal.png);
     mask-size: 1900% 100%;
     mask-position: 0% 0%;
+    /* animation-play-state: paused; */
 }
 
 .hero-images-container figure:hover::after {
-    animation: mask-reveal 1500ms steps(18) both;
+    animation: mask-reveal 1500ms steps(18) forwards;
+    /* animation-play-state: running; */
 }
 
 .hero h1 {
