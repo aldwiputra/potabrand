@@ -204,7 +204,6 @@ svg > text {
 .hero-images-container > figure {
 	position: relative;
 	flex-grow: 1;
-	padding: 0;
 }
 
 .hero-images-container figure img {
@@ -266,4 +265,47 @@ svg > text {
 		mask-position: 100% 0%;
 		-webkit-mask-position: 100% 0%;
 	}
+}
+
+/* ------------------------- SHOPS SECTION ---------------------------- */
+
+.shops {
+	margin-block-start: 3rem;
+}
+
+.shops h2 {
+	font-size: 3rem;
+	font-weight: 800;
+}
+
+.products-list {
+	display: grid;
+	padding: 0;
+	gap: 1.5rem;
+	grid-template-columns: repeat(4, 1fr);
+	margin-block-start: 1rem;
+}
+
+.products-list li {
+	padding-block-start: 0.75rem;
+	cursor: pointer;
+}
+
+.products-list li > * + * {
+	line-height: 1;
+	margin-block-start: 0.625rem;
+}
+
+.products-list img {
+	border-radius: 10px;
+	border: 2px solid var(--color-black);
+}
+
+.products-list h3 {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.products-list p {
+	font-weight: 800;
 }
