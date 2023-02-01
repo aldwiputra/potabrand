@@ -48,7 +48,7 @@
 		</section>
 
 		<section class="shops container">
-			<h2>Shop</h2>
+			<h2 class="section-title">Shop</h2>
 
 			<ul role="list" class="products-list">
 				<li>
@@ -175,8 +175,7 @@
 					<h3>Cause</h3>
 					<p>
 						Giving back is our number one priority to make the world a better place.
-						We will never compromise this aspect of our business for mere
-						profitability.
+						We will never compromise this aspect for mere profitability.
 					</p>
 				</li>
 
@@ -202,6 +201,61 @@
 					</p>
 				</li>
 			</ul>
+		</section>
+
+		<section class="contact-us container">
+			<h2 class="section-title">Contact Us</h2>
+			<p>Our team would love to hear from you!</p>
+			<div class="form-container">
+				<div class="name-input-container flex">
+					<div class="first-name-container flex-col">
+						<label for="firstname">First Name</label>
+						<input id="firstname" type="text" placeholder="John" required />
+					</div>
+					<div class="second-name-container flex-col">
+						<label for="secondname">Last Name</label>
+						<input id="secondname" type="text" placeholder="Doe" required />
+					</div>
+				</div>
+
+				<div class="email-container flex-col">
+					<label for="email">Email</label>
+					<input id="email" type="email" placeholder="john@doe.com" required />
+				</div>
+
+				<fieldset>
+					<legend>Gender</legend>
+
+					<div>
+						<input type="radio" id="male" name="gender" value="male" checked />
+						<label for="male">Male</label>
+					</div>
+
+					<div>
+						<input type="radio" id="female" name="gender" value="female" />
+						<label for="female">Female</label>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Choose what this is about</legend>
+
+					<div>
+						<input type="checkbox" id="price" name="theme" checked />
+						<label for="price">Price</label>
+					</div>
+
+					<div>
+						<input type="checkbox" id="complain" name="theme" />
+						<label for="complain">Return Item(s)</label>
+					</div>
+				</fieldset>
+
+				<div class="message-container flex-col">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="7"></textarea>
+				</div>
+			</div>
 		</section>
 	</body>
 </html>

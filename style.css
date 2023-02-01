@@ -90,6 +90,12 @@ a {
 	color: inherit;
 }
 
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within {
@@ -114,6 +120,11 @@ a {
 	display: flex;
 }
 
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
 .flex[data-align='center'] {
 	align-items: center;
 }
@@ -125,6 +136,12 @@ a {
 .container {
 	margin-inline: auto;
 	width: clamp(300px, 90%, 1400px);
+}
+
+.section-title {
+	font-size: 3rem;
+	font-weight: 800;
+	line-height: 1;
 }
 
 /* --------------------- HEADER ----------------------------- */
@@ -273,11 +290,6 @@ svg > text {
 	margin-block-start: 3rem;
 }
 
-.shops h2 {
-	font-size: 3rem;
-	font-weight: 800;
-}
-
 .products-list {
 	display: grid;
 	padding: 0;
@@ -377,6 +389,35 @@ svg > text {
 	border-radius: 50%;
 }
 
-.commitment p {
+/* .commitment p {
 	font-size: 0.875rem;
+} */
+
+/* ------------------------------------- CONTACT US SECTION ------------------------------- */
+
+.contact-us {
+	margin-block-start: 6rem;
+}
+
+.contact-us p {
+	margin-block-start: 0.625rem;
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+.form-container {
+	margin-block-start: 0.875rem;
+	font-size: 0.875rem;
+}
+
+.form-container > * + * {
+	margin-block-start: 0.75rem;
+}
+
+.name-input-container {
+	gap: 0.75rem;
+}
+
+.name-input-container > * {
+	flex: 1;
 }
