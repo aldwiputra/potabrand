@@ -334,6 +334,24 @@ svg > text {
 	margin-block-start: 0.625rem;
 }
 
+.products-list picture {
+	position: relative;
+}
+
+.products-list picture::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: var(--color-black);
+	border-radius: 10px;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.products-list picture:hover::after {
+	animation: overlay-animation 150ms infinite ease-in-out;
+}
+
 .products-list img {
 	border-radius: 10px;
 	border: 2px solid var(--color-black);
@@ -346,6 +364,20 @@ svg > text {
 
 .products-list p {
 	font-weight: 800;
+}
+
+@keyframes overlay-animation {
+	to {
+		opacity: 0.25;
+	}
+	/* 
+	50% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.25;
+	} */
 }
 
 /* --------------------------- COMMITMENT SECTION ------------------------------- */
