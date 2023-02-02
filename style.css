@@ -254,6 +254,7 @@ svg > text {
 .hero-images-container > figure {
 	position: relative;
 	flex-grow: 1;
+	transition: transform 250ms ease-in;
 }
 
 .hero-images-container figure img {
@@ -293,8 +294,13 @@ svg > text {
 	mask-position: 0% 0%;
 }
 
+.hero-images-container figure:hover {
+	transform: scale(1.05);
+	z-index: 10;
+}
+
 .hero-images-container figure:hover::after {
-	animation: mask-reveal 1500ms steps(18) forwards;
+	animation: mask-reveal 1000ms steps(18) forwards;
 }
 
 .hero h1 {
