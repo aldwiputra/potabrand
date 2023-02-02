@@ -241,7 +241,6 @@ nav li:hover {
 
 .hero {
 	--margin-top: 3rem;
-	/* padding-block-start: 3rem; */
 }
 
 svg > text {
@@ -292,12 +291,10 @@ svg > text {
 	mask-image: url(/assets/mask-reveal.png);
 	mask-size: 1900% 100%;
 	mask-position: 0% 0%;
-	/* animation-play-state: paused; */
 }
 
 .hero-images-container figure:hover::after {
 	animation: mask-reveal 1500ms steps(18) forwards;
-	/* animation-play-state: running; */
 }
 
 .hero h1 {
@@ -383,7 +380,7 @@ svg > text {
 }
 
 .title-container h2 {
-	font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+	font-size: clamp(2rem, 4vw + 1rem, 4.5rem);
 	line-height: 1.1;
 	font-weight: 800;
 }
@@ -512,7 +509,16 @@ fieldset label {
 footer {
 	margin-block-start: 6rem;
 	background-color: var(--color-black);
-	height: 10vh;
+	color: var(--color-white);
+}
+
+footer p {
+	text-align: center;
+	padding-block: 1.5rem;
+}
+
+footer span {
+	font-weight: 600;
 }
 
 /* -------------------------------------- RESPONSIVE ------------------------------- */
@@ -532,7 +538,6 @@ footer {
 
 	.hero {
 		--margin-top: 2rem;
-		padding-block: 2rem;
 	}
 
 	.hero-images-container {
@@ -602,6 +607,16 @@ footer {
 @media only screen and (max-width: 35rem) {
 	.products-list {
 		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		font-size: 0.875rem;
+	}
+
+	.products-list h3 {
+		font-size: 0.875rem;
+	}
+
+	.commitment,
+	.commitment ul {
 		gap: 1rem;
 	}
 
