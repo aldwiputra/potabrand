@@ -326,7 +326,6 @@ svg > text {
 
 .products-list li {
 	padding-block-start: 0.75rem;
-	cursor: pointer;
 }
 
 .products-list li > * + * {
@@ -335,6 +334,7 @@ svg > text {
 }
 
 .products-list picture {
+	cursor: pointer;
 	position: relative;
 }
 
@@ -349,7 +349,7 @@ svg > text {
 }
 
 .products-list picture:hover::after {
-	animation: overlay-animation 150ms infinite ease-in-out;
+	animation: overlay-animation 150ms 4 ease-in-out;
 }
 
 .products-list img {
