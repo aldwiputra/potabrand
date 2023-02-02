@@ -10,7 +10,7 @@
 	--color-black: rgba(0, 0, 0);
 	--color-white: rgba(255, 255, 251);
 	--color-peridot: rgba(218, 238, 0);
-	--margin-top: 3rem;
+	--margin-top: 6rem;
 }
 
 /* Box sizing rules */
@@ -41,10 +41,10 @@ ol[role='list'] {
 }
 
 /* Set core root defaults */
-html:focus-within,
-body {
+html:focus-within {
 	scroll-behavior: smooth;
 	-webkit-scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
 }
 
 /* Set core body defaults */
@@ -134,7 +134,7 @@ fieldset {
 }
 
 .section-title {
-	font-size: 3rem;
+	font-size: clamp(2rem, 3vw + 1rem, 3rem);
 	font-weight: 800;
 	line-height: 1;
 }
@@ -220,29 +220,28 @@ nav li:hover {
 	border-radius: 1rem;
 	width: 1.5rem;
 	background-color: var(--color-black);
-	transform-origin: top right;
-	transition: transform 200 linear;
+	transform-origin: center right;
+	transition: transform 200ms linear;
 }
 
 .hamburger-menu__line:nth-child(2) {
-	width: 50%;
+	transform: scaleX(0.5);
 }
 
 .hamburger-menu__line:nth-child(3) {
-	width: 75%;
+	transform: scaleX(0.75);
 }
 
-.hamburger-menu:hover .hamburger-menu__line:nth-child(2) {
-	transform: scaleX(2);
+.hamburger-menu:is(:hover, :focus) .hamburger-menu__line:nth-child(2),
+.hamburger-menu:is(:hover, :focus) .hamburger-menu__line:nth-child(3) {
+	transform: scaleX(1);
 }
 
-.hamburger-menu:hover .hamburger-menu__line:nth-child(3) {
-	transform: scaleX(1.3);
-}
 /* ----------------------- HERO SECTION ---------------------------- */
 
 .hero {
-	padding-block: 3rem;
+	--margin-top: 3rem;
+	/* padding-block-start: 3rem; */
 }
 
 svg > text {
@@ -302,7 +301,7 @@ svg > text {
 }
 
 .hero h1 {
-	font-size: clamp(1.375rem, 3vw, 2.5rem);
+	font-size: clamp(1.25rem, 3vw, 2.5rem);
 	line-height: 1.3;
 	font-weight: 700;
 }
@@ -319,10 +318,6 @@ svg > text {
 }
 
 /* ------------------------------ SHOP SECTION  ------------------------------- */
-
-.shops {
-	margin-block-start: 3rem;
-}
 
 .products-list {
 	display: grid;
@@ -363,7 +358,6 @@ svg > text {
 	gap: 1.5rem;
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(2, auto);
-	margin-block-start: 6rem;
 }
 
 .commitment > *:not(:last-child) {
@@ -430,7 +424,6 @@ svg > text {
 /* ------------------------------------- CONTACT US SECTION ------------------------------- */
 
 .contact-us {
-	margin-block-start: 6rem;
 	gap: 4rem;
 }
 
@@ -497,6 +490,7 @@ fieldset label {
 	border: 2px solid var(--color-black);
 	overflow: hidden;
 	position: relative;
+	min-height: 15rem;
 }
 
 .google-map::after {
@@ -523,7 +517,11 @@ footer {
 
 /* -------------------------------------- RESPONSIVE ------------------------------- */
 
-@media screen and (max-width: 45rem) {
+@media only screen and (max-width: 45rem) {
+	:root {
+		--margin-top: 3rem;
+	}
+
 	.desktop {
 		display: none;
 	}
@@ -541,11 +539,75 @@ footer {
 		gap: 1rem;
 	}
 
-	.hero-images-container figure:nth-child(2) {
-		display: none;
-	}
-
 	.hero h1 {
 		text-align: justify;
+	}
+
+	.commitment ul {
+		justify-content: space-between;
+	}
+
+	.commitment ul li {
+		flex: 1;
+		min-width: 20ch;
+		max-width: calc(50% - 0.75rem);
+	}
+
+	.contact-us {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.contact-us-wrapper {
+		max-width: 100%;
+	}
+
+	.name-input-container {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 60rem) {
+	.products-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.commitment {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, auto);
+	}
+
+	.commitment .title-container {
+		grid-area: 1 / 1 / 2/ 4;
+	}
+
+	.commitment .img-container {
+		grid-area: 2 / 1 / 3/ 4;
+		max-height: 10rem;
+	}
+
+	.img-container picture,
+	.img-container img {
+		width: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+
+	.commitment ul {
+		grid-area: 3 / 1 / 4/ 4;
+		flex-wrap: wrap;
+	}
+}
+
+@media only screen and (max-width: 35rem) {
+	.products-list {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.commitment ul li {
+		flex: 1;
+		min-width: 20ch;
+		max-width: 100%;
 	}
 }
