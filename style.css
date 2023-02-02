@@ -232,8 +232,10 @@ nav li:hover {
 	transform: scaleX(0.75);
 }
 
-.hamburger-menu:is(:hover, :focus) .hamburger-menu__line:nth-child(2),
-.hamburger-menu:is(:hover, :focus) .hamburger-menu__line:nth-child(3) {
+.hamburger-menu:hover .hamburger-menu__line:nth-child(2),
+.hamburger-menu:focus .hamburger-menu__line:nth-child(2),
+.hamburger-menu:hover .hamburger-menu__line:nth-child(3),
+.hamburger-menu:focus .hamburger-menu__line:nth-child(3) {
 	transform: scaleX(1);
 }
 
