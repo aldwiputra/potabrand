@@ -455,8 +455,8 @@ fieldset label {
 	font-weight: 400 !important;
 }
 
-.form-container > * + * {
-	margin-block-start: 0.75rem;
+.form-container {
+	--margin-top: 0.75rem;
 }
 
 .name-input-container {
