@@ -5,12 +5,17 @@ hamburgerMenu.addEventListener('click', menuClickHandler);
 
 function menuClickHandler(event) {
     if (menuMobile.classList.contains('active')) {
-        menuMobile.classList.add('out');
+        addOrRemoveClass(menuMobile, 'out', 'add');
     }
 
-    hamburgerMenu.classList.toggle('active');
-    menuMobile.classList.toggle('active');
+    addOrRemoveClass(hamburgerMenu, 'active');
+    addOrRemoveClass(menuMobile, 'active');
+
     hamburgerMenu.blur();
 
-    menuMobile.classList.remove('out');
+    addOrRemoveClass(menuMobile, 'out', 'remove');
+}
+
+function addOrRemoveClass(element, className, method = 'toggle') {
+    element.classList[method](className);
 }

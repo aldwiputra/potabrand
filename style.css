@@ -55,11 +55,6 @@ body {
     font-family: 'Satoshi', sans-serif;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 img,
 picture,
@@ -220,6 +215,10 @@ nav li:hover {
     background-color: var(--color-black);
     transform-origin: center right;
     transition: all 200ms linear;
+}
+
+.hamburger-menu__line:nth-child(1) {
+    transform: scaleX(1);
 }
 
 .hamburger-menu__line:nth-child(2) {
