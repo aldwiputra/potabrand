@@ -6,7 +6,7 @@ Hi there! This is a website of a fictional tactical fashion brand named POTA. I 
 
 ## :rocket: Visit Below
 
-[https://potabrand.netlify.app](https://potabrand.netlify.app)
+[https://potabrand.aldwiputra.site](https://potabrand.aldwiputra.site)
 
 ## :wrench: Technologies Used
 
